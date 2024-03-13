@@ -1,16 +1,8 @@
 <script lang="ts">
 	import { popup, LightSwitch } from '@skeletonlabs/skeleton';
-	import type { PopupSettings } from '@skeletonlabs/skeleton';
-
-	const popupClick: PopupSettings = {
-		event: 'click',
-		target: 'popupClick',
-		placement: 'bottom',
-		closeQuery: '.btn'
-	};
 </script>
 
-{#each ['Explore', 'Header 1', 'Header 2', 'Header 3'] as label, i}
+{#each ['Explore', 'Header 1', 'Header 2'] as label, i}
 	<!-- Trigger -->
 	<button
 		class="btn bg-primary-hover-token variant-filled-900"
@@ -35,25 +27,47 @@
 	<!-- Popup -->
 	<div class="card p-4 max-w-sm" data-popup="loopExample-{i}">
 		{#if label === 'Explore'}
-			<div class="popup-menu">
+			<div class="popup-menu flex flex-col space-y-4">
 				<div class="flex justify-between">
 					<span class="font-bold">Mode</span>
 					<LightSwitch />
 				</div>
 				<hr class="!border-t-2" />
-				<a href="/" class="btn variant-filled">Homepage</a>
-				<a href="/docs" class="btn variant-filled">Documentation</a>
-				<a href="/blog" class="btn variant-filled">Blog</a>
+				<a
+					href="/"
+					class="btn bg-primary-hover-token variant-filled-900"
+					data-sveltekit-preload-data="hover">Homepage</a
+				>
+				<a
+					href="/docs"
+					class="btn bg-primary-hover-token variant-filled-900"
+					data-sveltekit-preload-data="hover">Documentation</a
+				>
+				<a
+					href="/blog"
+					class="btn bg-primary-hover-token variant-filled-900"
+					data-sveltekit-preload-data="hover">Blog</a
+				>
 				<hr class="!border-t-2" />
-				<a href="/skaterxl" class="btn variant-filled">Skater XL</a>
-				<a href="/session" class="btn variant-filled">Session</a>
-				<a href="/skate" class="btn variant-filled">Skate</a>
+				<a
+					href="/skaterxl"
+					class="btn bg-primary-hover-token variant-filled-900"
+					data-sveltekit-preload-data="hover">Skater XL</a
+				>
+				<a
+					href="/session"
+					class="btn bg-primary-hover-token variant-filled-900"
+					data-sveltekit-preload-data="hover">Session</a
+				>
+				<a
+					href="/skate"
+					class="btn bg-primary-hover-token variant-filled-900"
+					data-sveltekit-preload-data="hover">Skate</a
+				>
 			</div>
 		{:else if label === 'Header 1'}
 			<button type="button" class="btn variant-filled">Button</button>
 		{:else if label === 'Header 2'}
-			<button type="button" class="btn variant-filled">Button</button>
-		{:else if label === 'Header 3'}
 			<button type="button" class="btn variant-filled">Button</button>
 		{/if}
 	</div>

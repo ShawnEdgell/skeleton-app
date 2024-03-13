@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AppBar } from '@skeletonlabs/skeleton';
+	import { AppBar, Avatar } from '@skeletonlabs/skeleton';
 	import Popups from './Popups.svelte';
 </script>
 
@@ -7,5 +7,7 @@
 	<svelte:fragment slot="lead">
 		<Popups />
 	</svelte:fragment>
-	<svelte:fragment slot="trail">(text)</svelte:fragment>
+	<svelte:fragment slot="trail">
+		<Avatar width="w-10" initials="MK" background="bg-primary-500" />
+	</svelte:fragment>
 </AppBar>
